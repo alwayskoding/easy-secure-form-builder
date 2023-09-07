@@ -32,7 +32,7 @@ const ChunkSelector = ({ onChunkSelect, onRemoveLastChunk, hasChunks }) => {
         </button>
       ))}
 
-      <button style={buttonStyle} onClick={onRemoveLastChunk} disabled={!hasChunks}>Remove Last Chunk</button>
+      <button style={buttonStyle} onClick={onRemoveLastChunk} disabled={!hasChunks}>Remove Last Added</button>
         
     </div>
   );
