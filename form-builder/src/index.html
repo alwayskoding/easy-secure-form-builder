@@ -1,0 +1,69 @@
+
+<form 
+    action="/app/secureForms/submitFormAsMessage"
+    method="POST"
+    enctype="multipart/form-data"
+    name="request_appointment_form"
+>
+
+<!-- COMMON HIDDEN INPUTS - Always required -->
+<input type="hidden" value="form_name_goes_here" name="sf:form_name" />
+<input type="hidden" name="sf:success_page" value="/p_page.cfm?pptitle=cmh%5Frequest%5Fappointment%5Fform%5Fsuccess" />
+<input type="hidden" name="sf:failure_page" value="/p_page.cfm?pptitle=failure%5Fpage" />
+
+<!-- MAILBOX SPECIFIC HIDDEN INPUT -->
+<input type="hidden" name="sf:recipient_mailbox" value="117446755">
+
+  <div class="input-group">
+      <label for="sfval:textInputName">Your Name:</label>
+      <input type="text" id="sfval:textInputName" name="sfval:textInputName" placeholder="Enter your full name">
+  </div>
+      
+
+  <div class="input-group">
+      <label for="sfval:emailInputName">Your Email:</label>
+      <input type="email" id="sfval:emailInputName" name="sfval:emailInputName" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+  </div>
+      
+
+        <fieldset class="input-group">
+            <legend>Medical Coverage Preferences:</legend>
+            <div class="input-label-pair">
+                <input type="checkbox" id="sfval:checkboxOption1" name="sfval:checkboxGroupName" value="generalHealth">
+                <label for="sfval:checkboxOption1">General Health & Wellness</label>
+            </div>
+            <div class="input-label-pair">
+                <input type="checkbox" id="sfval:checkboxOption2" name="sfval:checkboxGroupName" value="dentalCoverage">
+                <label for="sfval:checkboxOption2">Dental Coverage</label>
+            </div>
+            <div class="input-label-pair">
+                <input type="checkbox" id="sfval:checkboxOption3" name="sfval:checkboxGroupName" value="visionCoverage">
+                <label for="sfval:checkboxOption3">Vision Coverage</label>
+            </div>
+            <div class="input-label-pair">
+                <input type="checkbox" id="sfval:checkboxOption4" name="sfval:checkboxGroupName" value="prescriptionDrug">
+                <label for="sfval:checkboxOption4">Prescription Drug Coverage</label>
+            </div>
+            <div class="input-label-pair">
+                <input type="checkbox" id="sfval:checkboxOption5" name="sfval:checkboxGroupName" value="specialistCare">
+                <label for="sfval:checkboxOption5">Specialist Care & Referrals</label>
+            </div>
+        </fieldset>
+        
+
+  <div class="input-group">
+      <label for="sfval:telInputName">Phone Number:</label>
+      <input type="tel" id="sfval:telInputName" name="sfval:telInputName" placeholder="(123) 456-7890" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}">
+  </div>
+      
+
+  <div class="input-group">
+      <label for="sfval:emailInputName">Your Email:</label>
+      <input type="email" id="sfval:emailInputName" name="sfval:emailInputName" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+  </div>
+      
+<!-- Submit button -->
+<div class="submit_btn">
+    <input type="submit" value="Submit">
+</div>
+</form>

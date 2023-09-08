@@ -17,7 +17,7 @@ const textareaStyle = {
 };
 
 const buttonStyle = {
-  margin: '10px 0',
+  margin: '10px 5px',  // Added a slight right margin for spacing between buttons
   padding: '10px 20px',
   fontSize: '16px',
   cursor: 'pointer',
@@ -31,12 +31,17 @@ const buttonStyle = {
   }
 };
 
-const Outputter = ({ code }) => {
+const Outputter = ({ code, toggleAttachment, attachmentAdded }) => {
   return (
     <div style={containerStyle}>
       <h2>Output</h2>
-      <textarea style={textareaStyle} value={code} />
+      <textarea style={textareaStyle} value={code} readOnly />
       <div>
+      <button 
+          style={buttonStyle} 
+          onClick={toggleAttachment}>
+          {attachmentAdded ? "Remove Attachment" : "Add Attachment"}
+        </button>
         <button style={buttonStyle} onClick={() => navigator.clipboard.writeText(code)}>
           Copy Code
         </button>
